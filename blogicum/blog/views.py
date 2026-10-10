@@ -9,7 +9,7 @@ def index(request):
         category__is_published=True,
     )[:POSTS_ON_MAIN_PAGE]
     context = {
-        'posts': posts,
+        'post_list': posts,
     }
 
     return render(request, 'blog/index.html', context)
@@ -24,7 +24,7 @@ def category_posts(request, category_slug):
 
     context = {
         'category': category,
-        'posts': posts,
+        'post_list': posts,
     }
     return render(request, 'blog/category.html', context)
 
