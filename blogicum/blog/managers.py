@@ -12,4 +12,9 @@ class PublishedManager(models.Manager):
                 pub_date__lte=timezone.now(),
                 category__is_published=True,
             )
+            .select_related(
+                'author',
+                'category',
+                'location',
+            )
         )
